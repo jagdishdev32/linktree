@@ -9,35 +9,9 @@ const UsersLogin = (props) => {
   const [password, setPassword] = useState("");
   const history = useHistory();
 
-  if (props.auth.usersLogin) {
-    history.push(usersUrl);
-    return null;
-  }
-
-  // if (!props.auth.usersLogin) {
-  //   history.push(usersUrl);
-  //   return null;
-  // }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   usersLogin(username, password)
-  //     .then((data) => {
-  //       handleLoggedIn(data.access_token, props.setAuth)
-  //         .then(() => {
-  //           alert("Login Successful");
-  //           history.push(usersUrl);
-  //         })
-  //         .catch((error) => alert(error.message));
-  //     })
-  //     .catch((error) => alert(error.message));
-
-  //   return;
-  // };
-
   return (
     <>
-      <h1>Users Login Page</h1>
+      <h1>Login Page</h1>
 
       <form>
         <div className="mb-3">

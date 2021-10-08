@@ -1,6 +1,7 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import AllLinkButtons from "../../components/AllLinkButtons.components";
 import LinkButton from "../../components/LinkButton.components";
+import UsersProfile from "../../components/UsersProfile.component";
 import {
   usersLoginUrl,
   usersRegisterUrl,
@@ -12,16 +13,28 @@ import UsersRegister from "./UsersRegister.pages";
 const Users = (props) => {
   return (
     <>
-      <h1>Users Page</h1>
+      {/* <h1>Users Page</h1> */}
+      {props.auth.usersLogin ? null : <p>Please Login or Register</p>}
+
       <Switch>
         <Route path={`${usersUrl + usersLoginUrl}`}>
-          <UsersLogin auth={props.auth} setAuth={props.setAuth} />
+          {props.auth.usersLogin ? (
+            // If LoggedIN redirect to Users Page
+            <Redirect to={usersUrl} />
+          ) : (
+            <UsersLogin auth={props.auth} setAuth={props.setAuth} />
+          )}
         </Route>
         <Route
           path={`${usersUrl + usersRegisterUrl}`}
           component={UsersRegister}
         >
-          <UsersRegister auth={props.auth} setAuth={props.setAuth} />
+          {props.auth.usersLogin ? (
+            // If LoggedIN redirect to Users Page
+            <Redirect to={usersUrl} />
+          ) : (
+            <UsersRegister auth={props.auth} setAuth={props.setAuth} />
+          )}
         </Route>
       </Switch>
       <br />
@@ -29,7 +42,8 @@ const Users = (props) => {
       {props.auth.usersLogin ? (
         <>
           {/* Users Logged In */}
-          <h1>User Logged In</h1>
+          {/* <h1>User Logged In</h1> */}
+          <UsersProfile />
           <AllLinkButtons />
         </>
       ) : (

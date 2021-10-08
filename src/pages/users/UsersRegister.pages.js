@@ -58,7 +58,7 @@ const UsersRegister = (props) => {
   return (
     <>
       {/* -- name, username, password, age, address, phone+no */}
-      <h1>Users Register Page</h1>
+      <h1>Register Page</h1>
       <p className="text-muted">
         <span className="text-danger">*</span> Marked Are Required.
       </p>

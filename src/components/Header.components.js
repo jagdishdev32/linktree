@@ -14,9 +14,16 @@ import { usersHandleLogout } from "../handlers/users.handler";
 
 const Header = (props) => {
   let hashUrl = "";
+
   let homeUrlFinal = homeUrl,
     aboutUrlFinal = aboutUrl,
     usersUrlFinal = usersUrl;
+
+  if (basename) {
+    homeUrlFinal = basename + homeUrl;
+    aboutUrlFinal = basename + aboutUrl;
+    usersUrlFinal = basename + usersUrl;
+  }
 
   if (hashEnabled) {
     hashUrl = "#";

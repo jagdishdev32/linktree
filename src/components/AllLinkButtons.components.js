@@ -13,7 +13,7 @@ const AllLinkButtons = () => {
   return (
     <>
       <Card className="text-center">
-        <p className="text-dark">All Other Links</p>
+        <p className="text-dark">All Other Page Links</p>
         <LinkButton to={homeUrl} title="Home Page" />
         <LinkButton to={aboutUrl} title="About Page" />
         <LinkButton to={usersUrl} title="Users Page" />

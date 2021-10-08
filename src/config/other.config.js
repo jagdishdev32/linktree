@@ -1,4 +1,4 @@
-let hashEnabled = true;
+let hashEnabled = false;
 
 let basename = process.env.REACT_APP_FRONTEND_BASE_URL
   ? process.env.REACT_APP_FRONTEND_BASE_URL
@@ -12,6 +12,7 @@ const other = {
   siteTitle: process.env.REACT_APP_SITE_TITLE,
   hashEnabled: hashEnabled,
   basename: basename,
+  defaultLinkToggle: false,
 };
 
 module.exports = other;

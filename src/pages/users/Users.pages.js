@@ -43,7 +43,7 @@ const Users = (props) => {
         <>
           {/* Users Logged In */}
           {/* <h1>User Logged In</h1> */}
-          <UsersProfile />
+          <UsersProfile auth={props.auth} setAuth={props.setAuth} />
           <AllLinkButtons />
         </>
       ) : (

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { usersUrl } from "../../config/frontendUrl.config";
 import { usersHandleLoggedInSubmit } from "../../handlers/users.handler";
 import Button from "../../components/Button.components";
 

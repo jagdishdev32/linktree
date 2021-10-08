@@ -4,6 +4,7 @@ const data = {
   usersUrl: "/users",
   usersLoginUrl: "/login",
   usersRegisterUrl: "/register",
+  mainCardPageUrl: "/@",
 };
 
 module.exports = data;

@@ -5,7 +5,25 @@ import {
   usersUrl,
   usersLoginUrl,
   usersRegisterUrl,
+  usersGet,
 } from "../config/backendUrl.config";
+
+export const getUser = async (token) => {
+  return await axios({
+    method: "get",
+    url: baseUrl + usersUrl + usersGet,
+    headers: {
+      Authorization: token,
+    },
+  })
+    .then((response) => {
+      // console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
 
 export const usersLogin = async (username, password) => {
   return await axios({

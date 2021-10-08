@@ -8,10 +8,16 @@ import About from "./pages/About.pages";
 import NotFound from "./pages/NotFound.pages";
 import Users from "./pages/users/Users.pages";
 
-import { homeUrl, aboutUrl, usersUrl } from "./config/frontendUrl.config";
+import {
+  homeUrl,
+  aboutUrl,
+  usersUrl,
+  mainCardPageUrl,
+} from "./config/frontendUrl.config";
 
 import loginData from "./data/loginData.data";
 import { basename, hashEnabled } from "./config/other.config";
+import MainCardPage from "./pages/MainCardPage.pages";
 
 function App() {
   const [auth, setAuth] = useState(loginData);
@@ -47,6 +53,7 @@ function App() {
             <Route path={usersUrl}>
               <Users auth={auth} setAuth={setAuth} />
             </Route>
+            <Route path={mainCardPageUrl + ":name"} component={MainCardPage} />
             <Route component={NotFound} />
           </Switch>
         </div>

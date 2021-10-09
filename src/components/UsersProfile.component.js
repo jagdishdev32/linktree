@@ -10,10 +10,13 @@ import {
   siteTitle,
 } from "../config/other.config";
 import { mainCardPageUrl } from "../config/frontendUrl.config";
+import { deleteLinkHandler } from "../handlers/links.handlers";
+import { useHistory } from "react-router";
 
 const UsersProfile = (props) => {
   const [user, setUser] = useState({});
   const [links, setLinks] = useState([]);
+  const history = useHistory();
 
   // Fixing Toggle Issue
   // const [toggle, setToggle] = useState(defaultLinkToggle);
@@ -36,7 +39,7 @@ const UsersProfile = (props) => {
     setLinks(data.user.links);
   }, []);
 
-  const linkElements = links.map((link) => {
+  const LinkElements = links.map((link) => {
     const updateButtonHandler = (link) => {
       // setToggle(link.toggle);
       // Creating For Id
@@ -53,8 +56,8 @@ const UsersProfile = (props) => {
         />
       );
 
-      // Trying Scroll Automatic But failed
-      document.getElementById(formId)?.scrollIntoView();
+      // // Trying Scroll Automatic But failed
+      // document.getElementById(formId)?.scrollIntoView();
 
       return alert("Please go to Form above All links list");
     };
@@ -69,7 +72,14 @@ const UsersProfile = (props) => {
           <Button
             onClick={() => updateButtonHandler(link)}
             type="button"
-            title="update"
+            title="Update"
+          />
+          <Button
+            onClick={() =>
+              deleteLinkHandler(link._id, props.auth.usersToken, history)
+            }
+            type="button"
+            title="Delete"
           />
         </Card>
       </div>
@@ -103,7 +113,7 @@ const UsersProfile = (props) => {
       {formRender}
       {/* Links */}
       <h3>Links</h3>
-      {linkElements}
+      {LinkElements}
     </>
   );
 };

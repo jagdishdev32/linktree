@@ -23,6 +23,16 @@ export const createLinkRequestSubmit = (title, url, toggle, token) => {
     });
 };
 
+export const createLinkHandler = async (title, url, toggle, token, history) => {
+  return createLinkRequestSubmit(title, url, toggle, token)
+    .then((data) => {
+      alert("Created New Link Successfully");
+      history.go(0);
+      return null;
+    })
+    .catch((error) => alert(error));
+};
+
 export const updateLinkRequestSubmit = (link_id, title, url, toggle, token) => {
   return axios({
     method: "put",
@@ -45,16 +55,6 @@ export const updateLinkRequestSubmit = (link_id, title, url, toggle, token) => {
     });
 };
 
-export const createLinkHandler = async (title, url, toggle, token, history) => {
-  return createLinkRequestSubmit(title, url, toggle, token)
-    .then((data) => {
-      alert("Created New Link Successfully");
-      history.go(0);
-      return null;
-    })
-    .catch((error) => alert(error));
-};
-
 export const updateLinkHandler = async (
   link_id,
   title,
@@ -66,6 +66,35 @@ export const updateLinkHandler = async (
   return updateLinkRequestSubmit(link_id, title, url, toggle, token)
     .then((data) => {
       alert("Updated Link Successfully");
+      history.go(0);
+      return null;
+    })
+    .catch((error) => alert(error));
+};
+
+export const deleteLinkRequestSubmit = (link_id, token) => {
+  return axios({
+    method: "delete",
+    url: baseUrl + createLinkUrl,
+    data: {
+      id: link_id,
+    },
+    headers: {
+      Authorization: token,
+    },
+  })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
+
+export const deleteLinkHandler = async (link_id, token, history) => {
+  return deleteLinkRequestSubmit(link_id, token)
+    .then((data) => {
+      alert("Link Deleted");
       history.go(0);
       return null;
     })

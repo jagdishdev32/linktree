@@ -1,4 +1,4 @@
-let hashEnabled = false;
+let hashEnabled = true;
 
 let basename = process.env.REACT_APP_FRONTEND_BASE_URL
   ? process.env.REACT_APP_FRONTEND_BASE_URL

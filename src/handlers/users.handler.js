@@ -96,7 +96,7 @@ export const usersHandleLoggedInSubmit = (
       usersHandleLoggedIn(data.access_token, setAuth)
         .then(() => {
           alert("Login Successful");
-          history.push(usersUrl);
+          // history.push(usersUrl);
         })
         .catch((error) => alert(error.message));
     })
@@ -123,4 +123,25 @@ export const usersHandleRegisterSubmit = (
     .catch((error) => alert(error.message));
 
   return;
+};
+
+export const themeChangeRequestSubmit = (theme, token, history) => {
+  return axios({
+    method: "put",
+    url: baseUrl + usersUrl + "/themes",
+    data: {
+      theme,
+    },
+    headers: {
+      Authorization: token,
+    },
+  })
+    .then((response) => {
+      alert("Theme Changed");
+      history.go(0); // Reload Page
+      // return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };

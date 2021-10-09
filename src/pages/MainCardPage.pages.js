@@ -7,17 +7,10 @@ import { getUserFromMyLinkTreeHandler } from "../handlers/links.handlers";
 const MainCardPage = (props) => {
   const myLinkTree = props.match.params.name;
   const [user, setUser] = useState();
-  const [render, setRender] = useState(false);
 
   useEffect(async () => {
-    try {
-      const userObj = await getUserFromMyLinkTreeHandler(myLinkTree);
-      setUser(userObj);
-      console.log(userObj);
-      setRender(true);
-    } catch (error) {
-      //   alert(error.message);
-    }
+    const userObj = await getUserFromMyLinkTreeHandler(myLinkTree);
+    setUser(userObj);
   }, []);
 
   console.log("user", user);

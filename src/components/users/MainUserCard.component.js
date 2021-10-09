@@ -11,7 +11,7 @@ const MainUserCard = ({ user }) => {
         {user.links.map((link) => {
           // Filtering Links based on toggle
           if (link.toggle) {
-            return <FinalLinkRender link={link} />;
+            return <FinalLinkRender link={link} currTheme={user.theme} />;
           }
         })}
       </Card>

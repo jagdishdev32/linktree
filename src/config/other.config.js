@@ -38,12 +38,25 @@ const Themes = {
   },
 };
 
+const themesList = [
+  "default",
+  "primary",
+  "secondary",
+  "success",
+  "warning",
+  "danger",
+  "info",
+  "light",
+  "dark",
+];
+
 const other = {
   siteTitle: process.env.REACT_APP_SITE_TITLE,
   hashEnabled: hashEnabled,
   basename: basename,
   defaultLinkToggle: false,
   Themes: Themes,
+  themesList,
 };
 
 module.exports = other;

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { baseUrl, createLinkUrl } from "../config/backendUrl.config";
-import { usersUrl } from "../config/frontendUrl.config";
 
 export const createLinkRequestSubmit = (title, url, toggle, token) => {
   return axios({

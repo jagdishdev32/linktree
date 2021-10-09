@@ -1,18 +1,18 @@
 import { useState } from "react";
-import Card from "./Card.components";
-import Button from "./Button.components";
+import Card from "../Card.components";
+import Button from "../Button.components";
 import { useHistory } from "react-router";
 import {
   createLinkHandler,
   updateLinkHandler,
-} from "../handlers/links.handlers";
+} from "../../handlers/links.handlers";
 import { useEffect } from "react";
-import { defaultLinkToggle } from "../config/other.config";
+import { defaultLinkToggle } from "../../config/other.config";
 
 const LinkForm = (props) => {
   // Setting Default Values if Form is being used for update
   const titleDefault = "";
-  const urlDefault = undefined;
+  const urlDefault = "";
   const toggleDefault = props.toggle === true ? true : defaultLinkToggle;
   const idDefault = props.link?._id ? props.link._id : undefined;
 

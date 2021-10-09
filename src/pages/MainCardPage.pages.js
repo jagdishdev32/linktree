@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import MainUserCard from "../components/MainUserCard.component";
+import MainUserCard from "../components/users/MainUserCard.component";
+// import MainUserCard from "../components/MainUserCard.component";
 import { siteTitle } from "../config/other.config";
 import { getUserFromMyLinkTreeHandler } from "../handlers/links.handlers";
 

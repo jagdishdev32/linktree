@@ -117,10 +117,10 @@ export const usersHandleRegisterSubmit = (
 
   UsersRegisterRequest(username, password, myLinkTree)
     .then((data) => {
+      // Logging In After registration
       usersHandleLoggedInSubmit(e, username, password, history, setAuth);
     })
     .catch((error) => alert(error.message));
 
-  // Loggin In After registration
   return;
 };

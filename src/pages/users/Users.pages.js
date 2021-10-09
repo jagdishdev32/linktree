@@ -1,7 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import AllLinkButtons from "../../components/AllLinkButtons.components";
 import LinkButton from "../../components/LinkButton.components";
-import UsersProfile from "../../components/UsersProfile.component";
+import UsersProfile from "../../components/users/UsersProfile.component";
 import {
   usersLoginUrl,
   usersRegisterUrl,

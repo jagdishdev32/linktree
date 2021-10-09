@@ -7,7 +7,6 @@ import {
   usersUrl,
   usersLoginUrl,
   usersRegisterUrl,
-  mainCardPageUrl,
 } from "../config/frontendUrl.config";
 
 import { basename, hashEnabled, siteTitle } from "../config/other.config";
